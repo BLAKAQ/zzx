@@ -1,21 +1,23 @@
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+# Copyright (C) 2024 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
+# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
+
+""""
+TheTeamAlexa is a project of Telegram bots with variety of purposes.
+Copyright (c) 2024 -present Team=Alexa <https://github.com/TheTeamAlexa>
+
+This program is free software: you can redistribute it and can modify
+as you want or you can collabe if you have new ideas.
+"""
+
 import random
 import string
-from ast import ExceptHandler
-from strings.filters import command
+
 from pyrogram import filters
-from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto,
-                            Message)
+from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from config import (BANNED_USERS, lyrical, YAFA_NAME,
-                    YAFA_CHANNEL, CHANNEL_SUDO)
-import config
-from config import BANNED_USERS, lyrical
-from strings import get_command
-from AlexaMusic import (Apple, Resso, SoundCloud, Spotify, Telegram,
-                        YouTube, app)
+from AlexaMusic import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
 from AlexaMusic.core.call import Alexa
 from AlexaMusic.utils import seconds_to_min, time_to_seconds
 from AlexaMusic.utils.channelplay import get_channeplayCB

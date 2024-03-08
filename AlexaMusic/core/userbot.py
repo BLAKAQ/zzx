@@ -61,7 +61,7 @@ class Userbot(Client):
         )
 
     async def start(self):
-        LOGGER(__name__).info(f"Starting Assistant Clients...")
+        LOGGER(__name__).info(f"تم تشغيل حساب المساعد")
         if config.STRING1:
             await self.one.start()
             try:
@@ -74,7 +74,7 @@ class Userbot(Client):
             try:
                 await self.one.send_message(
                     config.LOG_GROUP_ID,
-                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
+                    "تم تشغيل حساب المساعد",
                 )
             except:
                 LOGGER(__name__).error(
@@ -102,7 +102,7 @@ class Userbot(Client):
             try:
                 await self.two.send_message(
                     config.LOG_GROUP_ID,
-                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
+                    "تم تشغيل حساب المساعد",
                 )
             except:
                 LOGGER(__name__).error(
@@ -130,7 +130,7 @@ class Userbot(Client):
             try:
                 await self.three.send_message(
                     config.LOG_GROUP_ID,
-                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
+                    "تم تشغيل حساب المساعد",
                 )
             except:
                 LOGGER(__name__).error(
@@ -158,7 +158,7 @@ class Userbot(Client):
             try:
                 await self.four.send_message(
                     config.LOG_GROUP_ID,
-                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
+                    "تم تشغيل حساب المساعد",
                 )
             except:
                 LOGGER(__name__).error(
@@ -186,7 +186,7 @@ class Userbot(Client):
             try:
                 await self.five.send_message(
                     config.LOG_GROUP_ID,
-                    "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
+                    "تم تشغيل حساب المساعد",
                 )
             except:
                 LOGGER(__name__).error(

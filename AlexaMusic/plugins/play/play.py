@@ -11,22 +11,21 @@ as you want or you can collabe if you have new ideas.
 
 import random
 import string
-from ast import ExceptHandler
-from pyrogram import filters, Client
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto, Message
+
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from config import BOT_TOKEN
-from strings.filters import command
 from AlexaMusic import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
-from AlexaMusic.core.call import Anony
+from AlexaMusic.core.call import Alexa
 from AlexaMusic.utils import seconds_to_min, time_to_seconds
 from AlexaMusic.utils.channelplay import get_channeplayCB
+from AlexaMusic.utils.database import is_video_allowed
 from AlexaMusic.utils.decorators.language import languageCB
 from AlexaMusic.utils.decorators.play import PlayWrapper
 from AlexaMusic.utils.formatters import formats
-from AlexaMusic.utils.inline import (
+from AlexaMusic.utils.inline.play import (
     botplaylist_markup,
     livestream_markup,
     playlist_markup,

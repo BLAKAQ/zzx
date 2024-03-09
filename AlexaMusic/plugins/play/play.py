@@ -8,16 +8,24 @@ Copyright (c) 2024 -present Team=Alexa <https://github.com/TheTeamAlexa>
 This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
-
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import random
 import string
-
+from ast import ExceptHandler
+from strings.filters import command
 from pyrogram import filters
-from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
+from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto,
+                            Message)
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from AlexaMusic import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
+from config import (BANNED_USERS, lyrical, YAFA_NAME,
+                    YAFA_CHANNEL, CHANNEL_SUDO)
+import config
+from config import BANNED_USERS, lyrical
+from strings import get_command
+from AlexaMusic import (Apple, Resso, SoundCloud, Spotify, Telegram,
+                        YouTube, app)
 from AlexaMusic.core.call import Alexa
 from AlexaMusic.utils import seconds_to_min, time_to_seconds
 from AlexaMusic.utils.channelplay import get_channeplayCB
@@ -25,22 +33,32 @@ from AlexaMusic.utils.database import is_video_allowed
 from AlexaMusic.utils.decorators.language import languageCB
 from AlexaMusic.utils.decorators.play import PlayWrapper
 from AlexaMusic.utils.formatters import formats
-from AlexaMusic.utils.inline.play import (
-    livestream_markup,
-    playlist_markup,
-    slider_markup,
-    track_markup,
-)
+from AlexaMusic.utils.inline.play import (livestream_markup,
+                                          playlist_markup,
+                                          slider_markup, track_markup)
 from AlexaMusic.utils.inline.playlist import botplaylist_markup
 from AlexaMusic.utils.logger import play_logs
 from AlexaMusic.utils.stream.stream import stream
-from config import BANNED_USERS, lyrical
-from strings import get_command
-from AlexaMusic.utils.database import is_served_user
+
+force_btn = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(   
+              text=f"اضغط للأشتراك .", url=f"t.me/A1DIIU",)                        
+        ],        
+    ]
+)
+async def check_is_joined(message):    
+    try:
+        userid = message.from_user.id
+        status = await app.get_chat_member(f"{CHANNEL_SUDO}", userid)
+        return True
+    except Exception:
+        await message.reply_text(f'❤️‍🩹┇عزيزي: {message.from_user.mention}\n🫀┇أشتࢪك في قناة البوت أولاً.\n🚧┇قناة البوت: @A1DIIU 🫂',reply_markup=force_btn,disable_web_page_preview=False)
+        return False
 
 # Command
 PLAY_COMMAND = get_command("PLAY_COMMAND")
-
 
 @app.on_message(filters.command("تشغيل"شغل") & filters.group & ~BANNED_USERS)
 @PlayWrapper
